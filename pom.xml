@@ -18,6 +18,7 @@
 
     <modules>
         <module>CrazyCucumberAPI</module>
+        <module>pirate-database</module>
     </modules>
 
     <name>${artifactId}</name>
