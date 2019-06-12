@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  db-postgres:
+    environment:
+      POSTGRES_USER: "devUser"
+      POSTGRES_PASSWORD: "dps&USER@."
+      POSTGRES_DB: "pirate-database"
+    build: docker-postgres
+    ports:
+      - 5432:5432
+    restart: always
+    stdin_open: true
+    tty: true
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
