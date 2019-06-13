@@ -52,4 +52,4 @@ Go to directory with Dockerfile and hit command:
 
 > docker built -t {postgres_image_name} .
 
-> docker run -rm --name {postgres_instance_name} -e POSGRES_PASSWORD={password} 5432:5432 -it {postgres_image_name}
+> docker run -rm --name {postgres_instance_name} -e POSTGRES_PASSWORD={password} -p 5432:5432 -it {postgres_image_name}
