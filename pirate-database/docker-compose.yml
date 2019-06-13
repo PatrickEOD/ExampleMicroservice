@@ -1,13 +1,15 @@
 version: '3.1'
 services:
   db-postgres:
+    image: "cucumberpostgresimage"
+    container_name: "cucumberpostgresinstance"
     environment:
-      POSTGRES_USER: "devUser"
-      POSTGRES_PASSWORD: "dps&USER@."
-      POSTGRES_DB: "pirate-database"
+      POSTGRES_USER: "devuser"
+      POSTGRES_PASSWORD: "dev&USER@."
+      POSTGRES_DB: "piratedb"
     build: docker-postgres
     ports:
-      - 5432:5432
+      - 9900:5432
     restart: always
     stdin_open: true
     tty: true

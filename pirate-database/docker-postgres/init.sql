@@ -1,10 +1,10 @@
--- CREATE DATABASE pirate-database;
--- CREATE USER devUser WITH PASSWORD 'dev&USER@.'
-GRANT ALL PRIVILEGES ON DATABASE pirate-database TO devUser;
+-- CREATE DATABASE piratedb;
+-- CREATE USER devuser WITH PASSWORD 'dev&USER@.'
+GRANT ALL PRIVILEGES ON DATABASE piratedb TO devuser;
 
-\connect pirate-database;
+\connect piratedb;
 
-CREATE SCHEMA AUTHORIZATION devUser;
+CREATE SCHEMA AUTHORIZATION devuser;
 
 CREATE TABLE crew (
     id varchar(25) primary key not null unique,
