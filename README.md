@@ -9,7 +9,7 @@ ExampleMicroservice for testing solutions and new ideas
 - **[API](#API)**
     - [CrazyCucumberAPI](#CrazyCucumberAPI)
 - **[Deployment](#Deployment)**
-    - [Module: pirate-database](#Module:-pirate-database)
+    - [Module: pirate database](#Module:-pirate-database)
 
 ## Scope of project
 
@@ -36,6 +36,12 @@ Database of choice is Postgresql 11
 ## API
 
 ### CrazyCucumberAPI
+
+| Endpoint | Controller | Operation | Return object | Parameters | Request body | Description |
+|----------|------------|-----------|---------------|------------|--------------|-------------|
+|getAllCrews()|CrazyCucumberController|GET|Crew List|none|none|Retrieve all crews from db. (temporary endpoint)|
+|getCrewById()|CrazyCucumberController|GET|Crew|String id|none|Retireve specific crew by provided id|
+
 
 ## Deployment
 
