@@ -1,6 +1,7 @@
 package com.exampleMicroservice.crazyCucumberAPI.controller;
 
-import com.exampleMicroservice.crazyCucumberAPI.model.Crew;
+import com.exampleMicroservice.crazyCucumberAPI.model.core.Crew;
+import com.exampleMicroservice.crazyCucumberAPI.model.domain.CrewDO;
 import com.exampleMicroservice.crazyCucumberAPI.service.CrewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
