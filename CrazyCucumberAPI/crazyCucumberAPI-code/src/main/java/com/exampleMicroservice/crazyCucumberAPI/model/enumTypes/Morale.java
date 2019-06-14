@@ -3,6 +3,9 @@ package com.exampleMicroservice.crazyCucumberAPI.model.enumTypes;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 public enum Morale {
     HATE("hate"),
     LOW("low"),

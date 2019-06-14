@@ -6,31 +6,29 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "crew")
 @Data
 @NoArgsConstructor
-public class Crew {
+public class Crew implements Serializable {
 
     @Id
-    @Column(name = "id", unique = true)
-    @JsonIgnore
-    private String id = null;
+    @Column(name = "id", length = 25, nullable = false, unique = true)
+    private String id;
 
-    @Column(name = "members")
+    @Column(name = "members", length = 20)
     @JsonProperty("members")
-    private String members = null;
+    private String members;
 
-    @Column(name = "combinedFirePower")
+    @Column(name = "combined_fire_power", length = 20)
     @JsonProperty("combinedFirePower")
-    private String combinedFirePower = null;
+    private String combinedFirePower;
 
-    @Column(name = "morale")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "morale", length  = 100)
     @JsonProperty("morale")
-    private Morale morale = null;
+    private Morale morale;
 }

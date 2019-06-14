@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,10 +23,16 @@ public class CrazyCucumberController {
         this.crewService = crewService;
     }
 
-    @GetMapping(value = "/getCrew",
+    @GetMapping(value = "/crew",
         produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    ResponseEntity<List<Crew>> getAllCrew() {
+    ResponseEntity<List<Crew>> getAllCrews() {
         return ResponseEntity.ok(crewService.getAll());
+    }
+
+    @GetMapping(value = "/crew/{id}",
+        produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    ResponseEntity<Crew> getCrewById(@PathVariable("id") String id) {
+        return ResponseEntity.ok(crewService.getCrewById(id));
     }
 
 }

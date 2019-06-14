@@ -17,8 +17,9 @@ ExampleMicroservice for testing solutions and new ideas
     - [ ] versions in main pom.xml
     - [ ] dockerize microservice 
 - [ ] REST API for basic operations (CrazyCucumberAPI)
-    - [ ] connect Database
+    - [x] connect Database
     - [ ] dockerize module
+    - [ ] add mappers for Data Object
 - [ ] Database for REST API to store data
     - [x] choose technology
     - [x] dockerize module
@@ -36,7 +37,7 @@ Database of choice is Postgresql 11
 ### CrazyCucumberAPI
 
 ## Deployment
-### Module: pirate-database
+### Module: pirate database
 
 #### Deploy local instance
 
