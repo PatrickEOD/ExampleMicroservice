@@ -17,13 +17,30 @@ public class CrewDO implements Serializable {
     @Column(name = "id", length = 25, nullable = false, unique = true)
     private String id;
 
-    @Column(name = "members", length = 20)
-    private String members;
+    @Column(name = "crew_name", length = 100, nullable = false, unique = true)
+    private String crewName;
 
-    @Column(name = "combined_fire_power", length = 20)
-    private String combinedFirePower;
+    //TODO from String change to PIRATE object
+    @Column(name = "pirates", length = 20)
+    private String pirate = null;
+
+    @Column(name = "pirates_amount", length = 20, nullable = false)
+    private String piratesAmount = "0";
+
+    @Column(name = "men_fire_power", nullable = false)
+    private String menFirePower = "0";
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "morale", length  = 100)
-    private Morale morale;
+    @Column(name = "morale", length  = 100, nullable = false)
+    private Morale morale = Morale.AVERAGE;
+
+    //TODO ManyToOne
+    @Column(name = "captain", length = 100, nullable = false)
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn()
+    private CaptainDO captain;
+
+    //TODO OneToOne
+    @Column(name = "ship_id", length = 20)
+    private ShipDO ships;
 }
