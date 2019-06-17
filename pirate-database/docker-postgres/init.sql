@@ -49,6 +49,21 @@ CREATE TABLE crew (
     constraint fk_crew_ship foreign key (ship_id) references ship(crew_id)
 );
 ------------------------------------------------------------------------------------------------------------------------
+CREATE TABLE pirate (
+    id varchar(25) primary key not null unique,
+    grade varchar(20) not null,
+    man_power varchar(20) not null,
+    morale varchar(20) not null
+);
+------------------------------------------------------------------------------------------------------------------------
+CREATE TABLE crew_pirate (
+    crew_id varchar(25) not null,
+    pirate_id varchar(25) not null,
+    constraint pk_pirate_team primary key (crew_id, pirate_id),
+    constraint fk_crewpirate_crew foreign key (crew_id) references crew(id) on update cascade,
+    constraint fk_crewpirate_pirate foreign key (pirate_id) references pirate(id) on update cascade
+);
+------------------------------------------------------------------------------------------------------------------------
 -- CREATE TABLE captain (
 --     id varchar(25) primary key not null unique,
 --     name varchar(120) not null,
