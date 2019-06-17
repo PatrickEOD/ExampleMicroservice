@@ -2,7 +2,6 @@ package com.exampleMicroservice.crazyCucumberAPI.mapper;
 
 import com.exampleMicroservice.crazyCucumberAPI.mapper.mappable.DOModelMappable;
 import com.exampleMicroservice.crazyCucumberAPI.model.enumTypes.Morale;
-import com.exampleMicroservice.crazyCucumberAPI.model.domain.enumTypes.MoraleDO;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

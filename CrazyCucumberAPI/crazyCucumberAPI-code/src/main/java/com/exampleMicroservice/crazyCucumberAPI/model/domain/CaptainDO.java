@@ -3,10 +3,7 @@ package com.exampleMicroservice.crazyCucumberAPI.model.domain;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -27,10 +24,12 @@ public class CaptainDO {
     private String account;
 
     //TODO OneToMany
-    @Column(name = "crews", length = 100, unique = true)
+//    @Column(name = "crews", length = 100, unique = true)
+    @OneToMany(mappedBy = "captain", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CrewDO> crews;
 
     //TODO OneToMany
-    @Column(name = "ships", length = 100, unique = true)
-    private List<Ships> ships;
+//    @Column(name = "ships", length = 100, unique = true)
+    @OneToMany(mappedBy = "captain", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ShipDO> ships;
 }

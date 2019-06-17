@@ -35,12 +35,13 @@ public class CrewDO implements Serializable {
     private Morale morale = Morale.AVERAGE;
 
     //TODO ManyToOne
-    @Column(name = "captain", length = 100, nullable = false)
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn()
+//    @Column(name = "captain", length = 100, nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "crews")
     private CaptainDO captain;
 
     //TODO OneToOne
-    @Column(name = "ship_id", length = 20)
+//    @Column(name = "ship_id", length = 20)
+    @OneToOne(mappedBy = "crew", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private ShipDO ships;
 }
